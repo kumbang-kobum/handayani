@@ -601,12 +601,12 @@ public final class DlgRawatInap extends javax.swing.JDialog {
         TLetak.setDocument(new batasInput((byte)50).getKata(TLetak));
         TTensi.setDocument(new batasInput((byte)8).getKata(TTensi));
         TCariPasien.setDocument(new batasInput((byte)20).getKata(TCariPasien));
-        TKeluhan.setDocument(new batasInput((int)2000).getKata(TKeluhan));  
-        TPemeriksaan.setDocument(new batasInput((int)2000).getKata(TPemeriksaan));    
-        TPenilaian.setDocument(new batasInput((int)2000).getKata(TPenilaian));  
-        TEvaluasi.setDocument(new batasInput((int)2000).getKata(TEvaluasi));
-        TindakLanjut.setDocument(new batasInput((int)2000).getKata(TindakLanjut));  
-        TInstruksi.setDocument(new batasInput((int)2000).getKata(TInstruksi));      
+        TKeluhan.setDocument(new batasInput((int)10000).getKata(TKeluhan));  
+        TPemeriksaan.setDocument(new batasInput((int)10000).getKata(TPemeriksaan));    
+        TPenilaian.setDocument(new batasInput((int)10000).getKata(TPenilaian));  
+        TEvaluasi.setDocument(new batasInput((int)10000).getKata(TEvaluasi));
+        TindakLanjut.setDocument(new batasInput((int)10000).getKata(TindakLanjut));  
+        TInstruksi.setDocument(new batasInput((int)10000).getKata(TInstruksi));      
         TTinggi.setDocument(new batasInput((byte)5).getKata(TTinggi));
         TBerat.setDocument(new batasInput((byte)5).getKata(TBerat));
         SpO2.setDocument(new batasInput((byte)3).getOnlyAngka(SpO2));
