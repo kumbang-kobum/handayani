@@ -117,6 +117,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         RR.setDocument(new batasInput((byte)5).getKata(RR));
         Suhu.setDocument(new batasInput((byte)5).getKata(Suhu));
         SPO.setDocument(new batasInput((byte)3).getKata(SPO));
+        Keterangan.setDocument(new batasInput((byte)30).getKata(Keterangan));
         TCari.setDocument(new batasInput((int)100).getKata(TCari));
         
         if(koneksiDB.CARICEPAT().equals("aktif")){
@@ -239,6 +240,8 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         jLabel29 = new widget.Label();
         SPO = new widget.TextBox();
         jLabel35 = new widget.Label();
+        Keterangan = new widget.TextBox();
+        jLabel31 = new widget.Label();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -773,6 +776,21 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
         FormInput.add(jLabel35);
         jLabel35.setBounds(773, 70, 30, 23);
 
+        Keterangan.setFocusTraversalPolicyProvider(true);
+        Keterangan.setName("Keterangan"); // NOI18N
+        Keterangan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                KeteranganKeyPressed(evt);
+            }
+        });
+        FormInput.add(Keterangan);
+        Keterangan.setBounds(880, 70, 150, 23);
+
+        jLabel31.setText("Keterangan :");
+        jLabel31.setName("jLabel31"); // NOI18N
+        FormInput.add(jLabel31);
+        jLabel31.setBounds(800, 70, 80, 23);
+
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
         ChkInput.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/143.png"))); // NOI18N
@@ -936,7 +954,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                 Valid.MyReportqry("rptDataCatatanObservasiIGD.jasper","report","::[ Data Catatan Observasi IGD ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
                     "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
                     "catatan_observasi_igd.keterangan,catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on catatan_observasi_igd.nip=petugas.nip where "+
@@ -945,7 +963,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                 Valid.MyReportqry("rptDataCatatanObservasiIGD.jasper","report","::[ Data Catatan Observasi IGD ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
                     "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
                     "catatan_observasi_igd.keterangan,catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on catatan_observasi_igd.nip=petugas.nip where "+
@@ -1083,7 +1101,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
             Valid.MyReportqry("rptFormulirCatatanObservasiIGD.jasper","report","::[ Formulir Catatan Observasi IGD ]::",
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,"+
                     "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,dokter.nm_dokter,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
                     "catatan_observasi_igd.keterangan,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis inner join dokter on dokter.kd_dokter=reg_periksa.kd_dokter "+
                     "inner join petugas on catatan_observasi_igd.nip=petugas.nip where reg_periksa.no_rawat='"+tbObat.getValueAt(tbObat.getSelectedRow(),0).toString()+"'",param);
@@ -1113,6 +1131,10 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     private void SPOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SPOKeyPressed
         Valid.pindah(evt,Suhu,Keterangan);
     }//GEN-LAST:event_SPOKeyPressed
+
+    private void KeteranganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganKeyPressed
+        Valid.pindah(evt,SPO,BtnSimpan);
+    }//GEN-LAST:event_KeteranganKeyPressed
 
     /**
     * @param args the command line arguments
@@ -1148,6 +1170,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     private widget.TextBox GCS;
     private widget.TextBox HR;
     private widget.ComboBox Jam;
+    private widget.TextBox Keterangan;
     private widget.Label LCount;
     private widget.ComboBox Menit;
     private javax.swing.JMenuItem MnCatatanObservasiIGD;
@@ -1181,6 +1204,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
     private widget.Label jLabel27;
     private widget.Label jLabel28;
     private widget.Label jLabel29;
+    private widget.Label jLabel31;
     private widget.Label jLabel35;
     private widget.Label jLabel4;
     private widget.Label jLabel6;
@@ -1200,7 +1224,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                 ps=koneksi.prepareStatement(
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
                     "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
                     "catatan_observasi_igd.keterangan,catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on catatan_observasi_igd.nip=petugas.nip where "+
@@ -1209,7 +1233,7 @@ public final class RMDataCatatanObservasiIGD extends javax.swing.JDialog {
                 ps=koneksi.prepareStatement(
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
                     "pasien.jk,pasien.tgl_lahir,catatan_observasi_igd.tgl_perawatan,catatan_observasi_igd.jam_rawat,catatan_observasi_igd.gcs,"+
-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
                     "catatan_observasi_igd.keterangan,catatan_observasi_igd.nip,petugas.nama from catatan_observasi_igd inner join reg_periksa on catatan_observasi_igd.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on catatan_observasi_igd.nip=petugas.nip where "+
