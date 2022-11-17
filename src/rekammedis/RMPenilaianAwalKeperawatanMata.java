@@ -1799,7 +1799,7 @@ public final class RMPenilaianAwalKeperawatanMata extends javax.swing.JDialog {
         TotalHasil.setBounds(774, 830, 80, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-03-2022 19:49:24" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-06-2022 15:27:41" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -2096,7 +2096,7 @@ public final class RMPenilaianAwalKeperawatanMata extends javax.swing.JDialog {
         jLabel78.setBounds(10, 1070, 380, 23);
 
         PanelWall1.setBackground(new java.awt.Color(29, 29, 29));
-        PanelWall1.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/picture/newmata.png"))); // NOI18N
+        PanelWall1.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/picture/mata.png"))); // NOI18N
         PanelWall1.setBackgroundImageType(usu.widget.constan.BackgroundConstan.BACKGROUND_IMAGE_STRECT);
         PanelWall1.setPreferredSize(new java.awt.Dimension(200, 200));
         PanelWall1.setRound(false);
@@ -2147,7 +2147,7 @@ public final class RMPenilaianAwalKeperawatanMata extends javax.swing.JDialog {
         label17.setBounds(460, 1090, 170, 23);
 
         PanelWall2.setBackground(new java.awt.Color(29, 29, 29));
-        PanelWall2.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/picture/newmata.png"))); // NOI18N
+        PanelWall2.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/picture/mata.png"))); // NOI18N
         PanelWall2.setBackgroundImageType(usu.widget.constan.BackgroundConstan.BACKGROUND_IMAGE_STRECT);
         PanelWall2.setPreferredSize(new java.awt.Dimension(200, 200));
         PanelWall2.setRound(false);
@@ -2611,7 +2611,7 @@ public final class RMPenilaianAwalKeperawatanMata extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-03-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-06-2022" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -2625,7 +2625,7 @@ public final class RMPenilaianAwalKeperawatanMata extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-03-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "08-06-2022" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);

@@ -54,7 +54,7 @@ public class MasterTemplatePemeriksaanDokter extends javax.swing.JDialog {
 
         Kd.setDocument(new batasInput((byte)5).getKata(Kd));
         //Nm.setDocument(new batasInput((byte)50).getKata(Nm));      
-        Template.setDocument(new batasInput((int)10000).getKata(Template));  
+        Template.setDocument(new batasInput((int)5000).getKata(Template));  
         TCari.setDocument(new batasInput((byte)100).getKata(TCari));    
         if(koneksiDB.CARICEPAT().equals("aktif")){
             TCari.getDocument().addDocumentListener(new javax.swing.event.DocumentListener(){

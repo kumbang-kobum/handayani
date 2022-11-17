@@ -50,6 +50,8 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
     private ResultSet rs;
     private int i=0;
     private DlgCariDokter dokter=new DlgCariDokter(null,false);
+    private RMCariHasilRadiologi cariradiologi=new RMCariHasilRadiologi(null,false);
+    private RMCariHasilLaborat carilaborat=new RMCariHasilLaborat(null,false);
     private StringBuilder htmlContent;
     private String finger="",pilihan="";
     
@@ -441,6 +443,8 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         Thoraks = new widget.ComboBox();
         jLabel46 = new widget.Label();
         Alergi = new widget.TextBox();
+        BtnDokter2 = new widget.Button();
+        BtnDokter3 = new widget.Button();
         internalFrame3 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbObat = new widget.Table();
@@ -1102,7 +1106,7 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         label11.setBounds(380, 40, 52, 23);
 
         TglAsuhan.setForeground(new java.awt.Color(50, 70, 50));
-        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-07-2022 17:46:10" }));
+        TglAsuhan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-11-2022 08:14:02" }));
         TglAsuhan.setDisplayFormat("dd-MM-yyyy HH:mm:ss");
         TglAsuhan.setName("TglAsuhan"); // NOI18N
         TglAsuhan.setOpaque(false);
@@ -1628,6 +1632,34 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         FormInput.add(Alergi);
         Alergi.setBounds(594, 190, 260, 23);
 
+        BtnDokter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnDokter2.setMnemonic('2');
+        BtnDokter2.setText("Intip Radiologi");
+        BtnDokter2.setToolTipText("Alt+2");
+        BtnDokter2.setName("BtnDokter2"); // NOI18N
+        BtnDokter2.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnDokter2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDokter2ActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnDokter2);
+        BtnDokter2.setBounds(860, 720, 130, 23);
+
+        BtnDokter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnDokter3.setMnemonic('2');
+        BtnDokter3.setText("Intip Laborat");
+        BtnDokter3.setToolTipText("Alt+2");
+        BtnDokter3.setName("BtnDokter3"); // NOI18N
+        BtnDokter3.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnDokter3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDokter3ActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnDokter3);
+        BtnDokter3.setBounds(860, 760, 130, 20);
+
         scrollInput.setViewportView(FormInput);
 
         internalFrame2.add(scrollInput, java.awt.BorderLayout.CENTER);
@@ -1670,7 +1702,7 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-07-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-11-2022" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -1684,7 +1716,7 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09-07-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "05-11-2022" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -2517,6 +2549,30 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
         Valid.pindah(evt,RPO,Penampilan);
     }//GEN-LAST:event_AlergiKeyPressed
 
+    private void BtnDokter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDokter2ActionPerformed
+        if(TNoRw.getText().equals("")&&TNoRM.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Pasien masih kosong...!!!");
+        }else{
+            cariradiologi.setNoRawat(TNoRw.getText());
+            cariradiologi.tampil();
+            cariradiologi.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            cariradiologi.setLocationRelativeTo(internalFrame1);
+            cariradiologi.setVisible(true);
+        }
+    }//GEN-LAST:event_BtnDokter2ActionPerformed
+
+    private void BtnDokter3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDokter3ActionPerformed
+        if(TNoRw.getText().equals("")&&TNoRM.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Pasien masih kosong...!!!");
+        }else{
+            carilaborat.setNoRawat(TNoRw.getText());
+            carilaborat.tampil();
+            carilaborat.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            carilaborat.setLocationRelativeTo(internalFrame1);
+            carilaborat.setVisible(true);
+        }
+    }//GEN-LAST:event_BtnDokter3ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -2542,6 +2598,8 @@ public final class RMPenilaianAwalMedisRalanPsikiatrik extends javax.swing.JDial
     private widget.Button BtnBatal;
     private widget.Button BtnCari;
     private widget.Button BtnDokter;
+    private widget.Button BtnDokter2;
+    private widget.Button BtnDokter3;
     private widget.Button BtnEdit;
     private widget.Button BtnHapus;
     private widget.Button BtnKeluar;

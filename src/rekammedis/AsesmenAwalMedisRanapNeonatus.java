@@ -2735,7 +2735,7 @@ public final class AsesmenAwalMedisRanapNeonatus extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnDokter2);
-        BtnDokter2.setBounds(360, 3100, 140, 23);
+        BtnDokter2.setBounds(830, 3140, 120, 23);
 
         BtnDokter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
         BtnDokter3.setMnemonic('2');
@@ -2749,7 +2749,7 @@ public final class AsesmenAwalMedisRanapNeonatus extends javax.swing.JDialog {
             }
         });
         FormInput.add(BtnDokter3);
-        BtnDokter3.setBounds(140, 3100, 120, 30);
+        BtnDokter3.setBounds(830, 3170, 120, 23);
 
         scrollInput.setViewportView(FormInput);
 

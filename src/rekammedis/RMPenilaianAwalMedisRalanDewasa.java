@@ -50,6 +50,8 @@ public final class RMPenilaianAwalMedisRalanDewasa extends javax.swing.JDialog {
     private ResultSet rs;
     private int i=0;
     private DlgCariDokter dokter=new DlgCariDokter(null,false);
+    private RMCariHasilRadiologi cariradiologi=new RMCariHasilRadiologi(null,false);
+    private RMCariHasilLaborat carilaborat=new RMCariHasilLaborat(null,false);
     private StringBuilder htmlContent;
     private String finger="";
     
@@ -379,6 +381,8 @@ public final class RMPenilaianAwalMedisRalanDewasa extends javax.swing.JDialog {
         TglAsuhan = new widget.Tanggal();
         jSeparator17 = new javax.swing.JSeparator();
         jLabel104 = new widget.Label();
+        BtnDokter2 = new widget.Button();
+        BtnDokter3 = new widget.Button();
         internalFrame3 = new widget.InternalFrame();
         Scroll = new widget.ScrollPane();
         tbObat = new widget.Table();
@@ -1358,6 +1362,34 @@ public final class RMPenilaianAwalMedisRalanDewasa extends javax.swing.JDialog {
         FormInput.add(jLabel104);
         jLabel104.setBounds(10, 1210, 190, 23);
 
+        BtnDokter2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnDokter2.setMnemonic('2');
+        BtnDokter2.setText("Intip Radiologi");
+        BtnDokter2.setToolTipText("Alt+2");
+        BtnDokter2.setName("BtnDokter2"); // NOI18N
+        BtnDokter2.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnDokter2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDokter2ActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnDokter2);
+        BtnDokter2.setBounds(860, 910, 130, 23);
+
+        BtnDokter3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/190.png"))); // NOI18N
+        BtnDokter3.setMnemonic('2');
+        BtnDokter3.setText("Intip Laborat");
+        BtnDokter3.setToolTipText("Alt+2");
+        BtnDokter3.setName("BtnDokter3"); // NOI18N
+        BtnDokter3.setPreferredSize(new java.awt.Dimension(28, 23));
+        BtnDokter3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDokter3ActionPerformed(evt);
+            }
+        });
+        FormInput.add(BtnDokter3);
+        BtnDokter3.setBounds(860, 950, 130, 20);
+
         scrollInput.setViewportView(FormInput);
 
         internalFrame2.add(scrollInput, java.awt.BorderLayout.CENTER);
@@ -2050,6 +2082,30 @@ public final class RMPenilaianAwalMedisRalanDewasa extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_MnPenilaianMedisActionPerformed
 
+    private void BtnDokter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDokter2ActionPerformed
+        if(TNoRw.getText().equals("")&&TNoRM.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Pasien masih kosong...!!!");
+        }else{
+            cariradiologi.setNoRawat(TNoRw.getText());
+            cariradiologi.tampil();
+            cariradiologi.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            cariradiologi.setLocationRelativeTo(internalFrame1);
+            cariradiologi.setVisible(true);
+        }
+    }//GEN-LAST:event_BtnDokter2ActionPerformed
+
+    private void BtnDokter3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDokter3ActionPerformed
+        if(TNoRw.getText().equals("")&&TNoRM.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Pasien masih kosong...!!!");
+        }else{
+            carilaborat.setNoRawat(TNoRw.getText());
+            carilaborat.tampil();
+            carilaborat.setSize(internalFrame1.getWidth()-20,internalFrame1.getHeight()-20);
+            carilaborat.setLocationRelativeTo(internalFrame1);
+            carilaborat.setVisible(true);
+        }
+    }//GEN-LAST:event_BtnDokter3ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -2075,6 +2131,8 @@ public final class RMPenilaianAwalMedisRalanDewasa extends javax.swing.JDialog {
     private widget.Button BtnBatal;
     private widget.Button BtnCari;
     private widget.Button BtnDokter;
+    private widget.Button BtnDokter2;
+    private widget.Button BtnDokter3;
     private widget.Button BtnEdit;
     private widget.Button BtnHapus;
     private widget.Button BtnKeluar;

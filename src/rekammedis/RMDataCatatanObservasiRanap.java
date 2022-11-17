@@ -785,12 +785,12 @@ public final class RMDataCatatanObservasiRanap extends javax.swing.JDialog {
             }
         });
         FormInput.add(Keterangan);
-        Keterangan.setBounds(880, 70, 150, 23);
+        Keterangan.setBounds(870, 70, 150, 23);
 
         jLabel31.setText("Keterangan :");
         jLabel31.setName("jLabel31"); // NOI18N
         FormInput.add(jLabel31);
-        jLabel31.setBounds(800, 70, 80, 23);
+        jLabel31.setBounds(790, 70, 80, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -855,7 +855,7 @@ public final class RMDataCatatanObservasiRanap extends javax.swing.JDialog {
         if(evt.getKeyCode()==KeyEvent.VK_SPACE){
             BtnSimpanActionPerformed(null);
         }else{
-            Valid.pindah(evt,Keterangan,BtnBatal);
+            Valid.pindah(evt,SPO,BtnBatal);
         }
 }//GEN-LAST:event_BtnSimpanKeyPressed
 
@@ -1239,7 +1239,7 @@ public final class RMDataCatatanObservasiRanap extends javax.swing.JDialog {
                 ps=koneksi.prepareStatement(
                     "select reg_periksa.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,reg_periksa.umurdaftar,reg_periksa.sttsumur,"+
                     "pasien.jk,pasien.tgl_lahir,catatan_observasi_ranap.tgl_perawatan,catatan_observasi_ranap.jam_rawat,catatan_observasi_ranap.gcs,"+
-                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,catatan_observasi_ranap.keterangan,"+
+                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,keterangan,"+
                     "catatan_observasi_ranap.nip,petugas.nama from catatan_observasi_ranap inner join reg_periksa on catatan_observasi_ranap.no_rawat=reg_periksa.no_rawat "+
                     "inner join pasien on reg_periksa.no_rkm_medis=pasien.no_rkm_medis "+
                     "inner join petugas on catatan_observasi_ranap.nip=petugas.nip where "+
@@ -1294,7 +1294,6 @@ public final class RMDataCatatanObservasiRanap extends javax.swing.JDialog {
         RR.setText("");
         Suhu.setText("");
         SPO.setText("");
-        Keterangan.setText("");
         Tanggal.setDate(new Date());
         GCS.requestFocus();
     } 

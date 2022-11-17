@@ -254,7 +254,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         MnCetakSuratCovid.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnCetakSuratCovid.setForeground(new java.awt.Color(50, 50, 50));
         MnCetakSuratCovid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnCetakSuratCovid.setText("Cetak Surat PRI");
+        MnCetakSuratCovid.setText("Cetak Surat Keterangan Covid");
         MnCetakSuratCovid.setName("MnCetakSuratCovid"); // NOI18N
         MnCetakSuratCovid.setPreferredSize(new java.awt.Dimension(200, 26));
         MnCetakSuratCovid.addActionListener(new java.awt.event.ActionListener() {
@@ -442,7 +442,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-03-2021" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -456,7 +456,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-03-2021" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -560,7 +560,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         TPasien.setBounds(355, 10, 365, 23);
 
         TanggalAkhir.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2022" }));
+        TanggalAkhir.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-03-2021" }));
         TanggalAkhir.setDisplayFormat("dd-MM-yyyy");
         TanggalAkhir.setName("TanggalAkhir"); // NOI18N
         TanggalAkhir.setOpaque(false);
@@ -595,7 +595,7 @@ public final class SuratKeteranganCovid extends javax.swing.JDialog {
         jLabel16.setBounds(599, 40, 27, 23);
 
         TanggalAwal.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-07-2022" }));
+        TanggalAwal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-03-2021" }));
         TanggalAwal.setDisplayFormat("dd-MM-yyyy");
         TanggalAwal.setName("TanggalAwal"); // NOI18N
         TanggalAwal.setOpaque(false);
