@@ -1,0 +1,239 @@
+1. Kadalauarsa
+=============================================================================
+Valid.MyReportqry("rptItemResep.jasper","report","::[ Aturan Pakai Obat ]::",
+ "select data_batch.tgl_kadaluarsa, resep_obat.no_resep,resep_obat.tgl_perawatan,resep_obat.jam,pasien.tgl_lahir, "+
+ "resep_obat.no_rawat,pasien.no_rkm_medis,pasien.nm_pasien,databarang.nama_brng,"+
+ "aturan_pakai.aturan,detail_pemberian_obat.jml,kodesatuan.satuan,pasien.jk,reg_periksa.umurdaftar,reg_periksa.sttsumur "+
+ "from data_batch inner join resep_obat inner join reg_periksa inner join pasien inner join "+
+ "aturan_pakai inner join databarang inner join detail_pemberian_obat "+
+ "inner join kodesatuan on data_batch.kode_brng=databarang.kode_brng and resep_obat.no_rawat=reg_periksa.no_rawat  "+
+ "and reg_periksa.no_rkm_medis=pasien.no_rkm_medis and "+
+ "databarang.kode_brng=aturan_pakai.kode_brng and "+
+ "detail_pemberian_obat.kode_brng=databarang.kode_brng " +
+ =============================================================================
+ 2.DlgReg penambahan no KTP
+ ==============================================================================
+ import rekammedis.RMPenilaianAwalMedisRalanMata;
+import rekammedis.RMPenilaianAwalMedisRalanNeurologi;
+import rekammedis.RMPenilaianAwalMedisRalanOrthopedi;
+MnPenilaianAwalMedisRalanPenyakitDalam = new javax.swing.JMenuItem();
+MnPenilaianAwalMedisRalanMata = new javax.swing.JMenuItem();
+MnPenilaianAwalMedisRalanNeurologi = new javax.swing.JMenuItem();
+MnPenilaianAwalMedisRalanOrthopedi = new javax.swing.JMenuItem();
+*
+Valid.MyReportqry("rptBuktiRegister.jasper","report","::[ Bukti Register ]::",
+"reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.no_ktp,pasien.jk,pasien.umur as umur,poliklinik.nm_poli,"+
+================================================================================
+3. DlgIG penambahan no KTP
+================================================================================
+*
+Valid.MyReportqry("rptBuktiRegister.jasper","report","::[ Bukti Register ]::",
+"reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.no_ktp,pasien.jk,pasien.umur as umur,poliklinik.nm_poli,"+
+=================================================================================
+4.  jasper bukti registarsi
+=================================================================================
+*
+rptBuktiRegistrasi
+<![CDATA[select reg_periksa.no_reg,reg_periksa.no_rawat,reg_periksa.tgl_registrasi,reg_periksa.jam_reg,pasien.no_tlp, reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.no_ktp,pasien.nm_pasien,pasien.jk,pasien.umur,poliklinik.nm_poli
+=================================================================================
+5. wallpaper handayani
+=================================================================================
+6. RMPenilaianAwalMedisIGD.java
+=================================================================================
+param.put("lokalisortho",Sequel.cariGambar("select lokalisortho from gambar")); 
+=================================================================================
+7. MasterRencanaKeperawatan.java (10000 karakter)
+=================================================================================
+namarencana.setDocument(new batasInput((int)10000).getKata(namarencana));
+=================================================================================
+8.MasterRencanaKeperawatanAnak.java (10000 karakter)
+=================================================================================
+namarencana.setDocument(new batasInput((int)10000).getKata(namarencana));
+=================================================================================
+9.RMDataAsuhanGizi.java
+=================================================================================
+    private DlgCariPetugas petugas=new DlgCariPetugas(null,false);
+    private RMCariHasilLaborat carilaborat=new RMCariHasilLaborat(null,false);
+=================================================================================
+10. RMPenilaianAwalMedisRalanDewasa.form
+=================================================================================
+<Property name="backgroundImage" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+-                              <Image iconType="3" name="/picture/semua.png"/>
+                              <Image iconType="3" name="/picture/LokalisOrtho.png"/>
+-        PanelWall.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/picture/semua.png"))); // NOI18N
+        PanelWall.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/picture/LokalisOrtho.png"))); // NOI18N
+=================================================================================
+11.MasterRencanaKeperawatanGigi.java (10000 karakter)
+=================================================================================
+-	namarencana.setDocument(new batasInput((int)150).getKata(namarencana));
+        namarencana.setDocument(new batasInput((int)10000).getKata(namarencana));
+=================================================================================
+12.MasterRencanaKeperawatanIGD.java
+=================================================================================
+-	namarencana.setDocument(new batasInput((int)150).getKata(namarencana));
+        namarencana.setDocument(new batasInput((int)10000).getKata(namarencana));
+=================================================================================
+13.MasterRencanaKeperawatanMata.java (10000 karakter)
+=================================================================================
+-	namarencana.setDocument(new batasInput((int)150).getKata(namarencana));
+        namarencana.setDocument(new batasInput((int)10000).getKata(namarencana));
+=================================================================================
+14.MasterRencanaKeperawatanPsikiatri.java (10000 karakter)
+=================================================================================
+-	namarencana.setDocument(new batasInput((int)150).getKata(namarencana));
+        namarencana.setDocument(new batasInput((int)10000).getKata(namarencana));
+=================================================================================
+15.RMRiwayatPerawatan.java (PACS)
+=================================================================================
+-	"<td valign='top' align='center'><a href='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/radiologi/"+rs2.getString("lokasi_gambar")+"'><img alt='Gambar Radiologi' src='http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/radiologi/"+rs2.getString("lokasi_gambar")+"' width='450' height='450'/></a></td>"+
+                                            "<td valign='top' align='center'><a href='"+rs2.getString("lokasi_gambar")+"'><img alt='Gambar Radiologi' src='"+rs2.getString("lokasi_gambar")+"' width='450' height='450'/></a></td>"+
+=================================================================================
+16.DlgRawatInap.java ( batas inpu)
+=================================================================================
+import rekammedis.RMCariHasilLaborat;
+import rekammedis.RMCariHasilRadiologi;
+-	TInstruksi.setDocument(new batasInput((int)2000).getKata(TInstruksi));      
+        TKeluhan.setDocument(new batasInput((int)10000).getKata(TKeluhan));  
+        TPemeriksaan.setDocument(new batasInput((int)10000).getKata(TPemeriksaan));    
+        TPenilaian.setDocument(new batasInput((int)10000).getKata(TPenilaian));  
+        TEvaluasi.setDocument(new batasInput((int)10000).getKata(TEvaluasi));
+        TindakLanjut.setDocument(new batasInput((int)10000).getKata(TindakLanjut));  
+        TInstruksi.setDocument(new batasInput((int)10000).getKata(TInstruksi)); 
+=================================================================================
+17.DlgRawatJalan.java (batas input)
+=================================================================================
+import rekammedis.RMCariHasilRadiologi;
+import rekammedis.RMCariHasilLaborat;
+-        TInstruksi.setDocument(new batasInput((int)2000).getKata(TInstruksi));     
+        TKeluhan.setDocument(new batasInput((int)10000).getKata(TKeluhan));
+        TPemeriksaan.setDocument(new batasInput((int)10000).getKata(TPemeriksaan));
+        TPenilaian.setDocument(new batasInput((int)10000).getKata(TPenilaian));    
+        TInstruksi.setDocument(new batasInput((int)10000).getKata(TInstruksi));
+-        TEvaluasi.setDocument(new batasInput((int)2000).getKata(TEvaluasi));
+        TindakLanjut.setDocument(new batasInput((int)10000).getKata(TindakLanjut));
+        TEvaluasi.setDocument(new batasInput((int)10000).getKata(TEvaluasi));
+==================================================================================
+18. DlgIGD.java (surat SPRI)
+==================================================================================
+-        MnCetakSuratCovid.setText("Surat Keterangan Covid");
+        MnCetakSuratCovid.setText("Surat PRI");
+-                   "reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,pasien.umur as umur,poliklinik.nm_poli,"+
+                   "reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,pasien.no_ktp,pasien.umur as umur,poliklinik.nm_poli,"+
+==================================================================================
+19.SuratKeteranganCovid.java
+==================================================================================
+-        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Surat Keterangan Covid ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+        internalFrame1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(240, 245, 235)), "::[ Data Surat Rawat Inap ]::", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(50, 50, 50))); // NOI18N
+==================================================================================
+20.DlgPilihanCetakDokumen.java
+==================================================================================
+-                           "reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.jk,pasien.umur as umur,poliklinik.nm_poli,"+
+                           "reg_periksa.kd_dokter,dokter.nm_dokter,reg_periksa.no_rkm_medis,pasien.nm_pasien,pasien.no_ktp,pasien.jk,pasien.umur as umur,poliklinik.nm_poli,"+
+==================================================================================
+21.src/rekammedis/RMDataCatatanObservasiRanap.java
+==================================================================================
+-            "TD(mmHg)","HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","NIP","Nama Petugas"
+            "TD(mmHg)","HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Keterangan","NIP","Nama Petugas"
+*            }else if(i==15){
+                column.setPreferredWidth(160);
+            }else if(i==16){
+                column.setPreferredWidth(160);
+*        SPO.setDocument(new batasInput((byte)3).getKata(SPO));
+        Keterangan.setDocument(new batasInput((byte)30).getKata(Keterangan));
+-            if(Sequel.menyimpantf("catatan_observasi_ranap","?,?,?,?,?,?,?,?,?,?","Data",10,new String[]{
+            if(Sequel.menyimpantf("catatan_observasi_ranap","?,?,?,?,?,?,?,?,?,?,?","Data",11,new String[]{
+-                GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),NIP.getText()
+                GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),Keterangan.getText(),NIP.getText()
+-            Valid.pindah(evt,SPO,BtnBatal);
+            Valid.pindah(evt,Keterangan,BtnBatal);
+-                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
+                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,catatan_observasi_ranap.keterangan,"+
+-                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
+                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,catatan_observasi_ranap.keterangan,"+
+-                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
+                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,catatan_observasi_ranap.keterangan,"+
+-        Valid.pindah(evt,Suhu,BtnSimpan);
+        Valid.pindah(evt,Suhu,Keterangan);
+    }//GEN-LAST:event_SPOKeyPressed
+
+    private void KeteranganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganKeyPressed
+        Valid.pindah(evt,SPO,BtnSimpan);
+    }//GEN-LAST:event_KeteranganKeyPressed
+*    private widget.ComboBox Jam;
+    private widget.TextBox Keterangan;
+-                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
+                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,catatan_observasi_ranap.keterangan,"+
+-                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,"+
+                    "catatan_observasi_ranap.td,catatan_observasi_ranap.hr,catatan_observasi_ranap.rr,catatan_observasi_ranap.suhu,catatan_observasi_ranap.spo2,catatan_observasi_ranap.keterangan,"+
+-                        rs.getString("hr"),rs.getString("rr"),rs.getString("suhu"),rs.getString("spo2"),rs.getString("nip"),
+                        rs.getString("hr"),rs.getString("rr"),rs.getString("suhu"),rs.getString("spo2"),rs.getString("keterangan"),rs.getString("nip"),
+*        SPO.setText("");
+        Keterangan.setText("");
+*            SPO.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            Keterangan.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+            Valid.SetTgl(Tanggal,tbObat.getValueAt(tbObat.getSelectedRow(),6).toString());
+-        Sequel.mengedit("catatan_observasi_ranap","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,nip=?",13,new String[]{
+        Sequel.mengedit("catatan_observasi_ranap","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,keterangan=?,nip=?",14,new String[]{
+-            GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
+            GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),Keterangan.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
+=================================================================================================================================================================
+22.RMDataCatatanObservasiIGD.java
+=================================================================================================================================================================
+-            "TD(mmHg)","HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","NIP","Nama Petugas"
+            "TD(mmHg)","HR(x/menit)","RR(x/menit)","Suhu(°C)","SpO2(%)","Keterangan","NIP","Nama Petugas"
+*            }else if(i==15){
+                column.setPreferredWidth(160);
+            }else if(i==16){
+                column.setPreferredWidth(160);
+*        SPO.setDocument(new batasInput((byte)3).getKata(SPO));
+        Keterangan.setDocument(new batasInput((byte)30).getKata(Keterangan));
+*        SPO = new widget.TextBox();
+        jLabel35 = new widget.Label();
+        jLabel31 = new widget.Label();
+        Keterangan = new widget.TextBox();
+-            if(Sequel.menyimpantf("catatan_observasi_igd","?,?,?,?,?,?,?,?,?,?","Data",10,new String[]{
+            if(Sequel.menyimpantf("catatan_observasi_igd","?,?,?,?,?,?,?,?,?,?,?","Data",11,new String[]{
+-                GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),NIP.getText()
+                GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),Keterangan.getText(),NIP.getText()
+*            Valid.pindah(evt,SPO,BtnBatal);
+            Valid.pindah(evt,Keterangan,BtnBatal);
+-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
+-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
+-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
+*    private void SPOKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SPOKeyPressed
+        Valid.pindah(evt,Suhu,BtnSimpan);
+        Valid.pindah(evt,Suhu,Keterangan);
+    }//GEN-LAST:event_SPOKeyPressed
+
+    private void KeteranganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganKeyPressed
+        Valid.pindah(evt,SPO,BtnSimpan);
+    }//GEN-LAST:event_KeteranganKeyPressed
+*    private widget.ComboBox Jam;
+    private widget.TextBox Keterangan;
+*    private widget.Label jLabel29;
+    private widget.Label jLabel31;
+-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
+-                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,"+
+                    "catatan_observasi_igd.td,catatan_observasi_igd.hr,catatan_observasi_igd.rr,catatan_observasi_igd.suhu,catatan_observasi_igd.spo2,catatan_observasi_igd.keterangan,"+
+-                        rs.getString("hr"),rs.getString("rr"),rs.getString("suhu"),rs.getString("spo2"),rs.getString("nip"),
+                        rs.getString("hr"),rs.getString("rr"),rs.getString("suhu"),rs.getString("spo2"),rs.getString("keterangan"),rs.getString("nip"),
+*        SPO.setText("");
+        Keterangan.setText("");
+*            SPO.setText(tbObat.getValueAt(tbObat.getSelectedRow(),13).toString());
+            Keterangan.setText(tbObat.getValueAt(tbObat.getSelectedRow(),14).toString());
+-        Sequel.mengedit("catatan_observasi_igd","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,nip=?",13,new String[]{
+        Sequel.mengedit("catatan_observasi_igd","tgl_perawatan=? and jam_rawat=? and no_rawat=?","no_rawat=?,tgl_perawatan=?,jam_rawat=?,gcs=?,td=?,hr=?,rr=?,suhu=?,spo2=?,keterangan=?,nip=?",14,new String[]{
+            TNoRw.getText(),Valid.SetTgl(Tanggal.getSelectedItem()+""),Jam.getSelectedItem()+":"+Menit.getSelectedItem()+":"+Detik.getSelectedItem(),
+-           GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
+            GCS.getText(),TD.getText(),HR.getText(),RR.getText(),Suhu.getText(),SPO.getText(),Keterangan.getText(),NIP.getText(),tbObat.getValueAt(tbObat.getSelectedRow(),6).toString(),
+========================================================================
+23. tanggal lahir pada pemeriksaan lab
+=========================================================================
+DlgCariPeriksaLab.java
+                        param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
+============================================================================
