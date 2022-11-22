@@ -1162,10 +1162,10 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
     public void tampil(String nopermintaan) {
         Valid.tabelKosong(tabMode);
         try{
-            kdke.setText(Sequel.cariIsi("select kd_bangsal from permintaan_medis where no_permintaan=?", nopermintaan));
-            nmke.setText(Sequel.cariIsi("select nm_bangsal from bangsal where kd_bangsal=?",kdke.getText()));
-            kddari.setText(Sequel.cariIsi("select kd_bangsaltujuan from permintaan_medis where no_permintaan=?", nopermintaan));
-            nmdari.setText(Sequel.cariIsi("select nm_bangsal from bangsal where kd_bangsal=?",kddari.getText()));
+            kdke.setText(Sequel.cariIsi("select permintaan_medis.kd_bangsal from permintaan_medis where permintaan_medis.no_permintaan=?", nopermintaan));
+            nmke.setText(Sequel.cariIsi("select bangsal.nm_bangsal from bangsal where bangsal.kd_bangsal=?",kdke.getText()));
+            kddari.setText(Sequel.cariIsi("select permintaan_medis.kd_bangsaltujuan from permintaan_medis where permintaan_medis.no_permintaan=?", nopermintaan));
+            nmdari.setText(Sequel.cariIsi("select bangsal.nm_bangsal from bangsal where bangsal.kd_bangsal=?",kddari.getText()));
             ps=koneksi.prepareStatement(
                 "select databarang.kode_brng, databarang.nama_brng,detail_permintaan_medis.kode_sat, "+
                 "detail_permintaan_medis.jumlah,databarang."+hppfarmasi+" as dasar,(detail_permintaan_medis.jumlah*databarang."+hppfarmasi+") as total "+
@@ -1178,7 +1178,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                 while(rs.next()){            
                     if(aktifkanbatch.equals("yes")){
                         psstok=koneksi.prepareStatement(
-                                "select ifnull(gudangbarang.stok,'0'),data_batch."+hppfarmasi+" as dasar,gudangbarang.no_batch,gudangbarang.no_faktur "+
+                                "select ifnull(gudangbarang.stok,'1'),data_batch."+hppfarmasi+" as dasar,gudangbarang.no_batch,gudangbarang.no_faktur "+
                                 "from gudangbarang inner join data_batch on gudangbarang.kode_brng=data_batch.kode_brng "+
                                 "where gudangbarang.stok>0 and gudangbarang.kd_bangsal=? and gudangbarang.kode_brng=? and "+
                                 "gudangbarang.no_batch<>'' and gudangbarang.no_faktur<>''"+
@@ -1212,7 +1212,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                                 "gudangbarang.no_batch='' and gudangbarang.no_faktur=''");
                         try {
                             psstok.setString(1,kddari.getText());
-                            psstok.setString(2,tabMode.getValueAt(i,3).toString());
+                            psstok.setString(2,rs.getString("kode_brng"));
                             rsstok=psstok.executeQuery();
                             if(rsstok.next()){
                                 tabMode.addRow(new Object[]{rs.getString("jumlah"),rs.getDouble("dasar"),rs.getDouble("total"),rs.getString("kode_brng"),rs.getString("nama_brng"),rs.getString("kode_sat"),rsstok.getDouble(1),0,"",""});
