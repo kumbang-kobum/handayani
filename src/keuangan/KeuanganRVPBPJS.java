@@ -1095,7 +1095,7 @@ private void MnDetailPiutangActionPerformed(java.awt.event.ActionEvent evt) {//G
                                 
                             Sequel.menyimpan("tampjurnal","'"+Piutang_BPJS_RVP+"','PIUTANG BPJS','0','"+tabMode.getValueAt(i,8).toString()+"'","kredit=kredit+'"+tabMode.getValueAt(i,8).toString()+"'","kd_rek='"+Piutang_BPJS_RVP+"'");     
                             Sequel.menyimpan("tampjurnal","'"+koderekening+"','"+AkunBayar.getSelectedItem()+"','"+tabMode.getValueAt(i,10).toString()+"','0'","debet=debet+'"+tabMode.getValueAt(i,10).toString()+"'","kd_rek='"+koderekening+"'"); 
-                            sukses=jur.simpanJurnal(tabMode.getValueAt(i,1).toString(),"U","BAYAR PIUTANG BPJS"+", OLEH "+kdptg.getText());  
+                            sukses=jur.simpanJurnal(tabMode.getValueAt(i,1).toString(),"U","K093 BAYAR PIUTANG BPJS"+", OLEH "+kdptg.getText());  
                         }else if(Valid.SetAngka(tabMode.getValueAt(i,11).toString())<100){
                             Sequel.queryu("delete from tampjurnal");
                             //tindakan ralan
@@ -1362,7 +1362,7 @@ private void MnDetailPiutangActionPerformed(java.awt.event.ActionEvent evt) {//G
                                 Sequel.menyimpan("tampjurnal","'"+Service_Ranap+"','PENDAPATAN SERVICE INAP','"+Valid.SetAngka(tabMode.getValueAt(i,82).toString())+"','0'","debet=debet+'"+Valid.SetAngka(tabMode.getValueAt(i,82).toString())+"'","kd_rek='"+Service_Ranap+"'");   
                             }
                             //jurnal pembatalan beban, utang, piutang, pendapatan
-                            sukses=jur.simpanJurnal(tabMode.getValueAt(i,1).toString(),"U","RVP PIUTANG PASIEN BPJS, OLEH "+kdptg.getText());     
+                            sukses=jur.simpanJurnal(tabMode.getValueAt(i,1).toString(),"U","K094 RVP PIUTANG PASIEN BPJS, OLEH "+kdptg.getText());     
                             
                             if(sukses==true){
                                 Sequel.queryu("delete from tampjurnal");
@@ -1631,7 +1631,7 @@ private void MnDetailPiutangActionPerformed(java.awt.event.ActionEvent evt) {//G
                                     Sequel.menyimpan("tampjurnal","'"+Service_Ranap+"','PENDAPATAN SERVICE INAP','0','"+(persenbayar *Valid.SetAngka(tabMode.getValueAt(i,82).toString()))+"'","kredit=kredit+'"+(persenbayar *Valid.SetAngka(tabMode.getValueAt(i,82).toString()))+"'","kd_rek='"+Service_Ranap+"'");   
                                 }
                                 //jurnal ulang penyusutan beban, utang, piutang, pendapatan
-                                sukses=jur.simpanJurnal(tabMode.getValueAt(i,1).toString(),"U","RVP PIUTANG PASIEN BPJS, OLEH "+kdptg.getText());     
+                                sukses=jur.simpanJurnal(tabMode.getValueAt(i,1).toString(),"U","K095 RVP PIUTANG PASIEN BPJS, OLEH "+kdptg.getText());     
                                 if(sukses==true){
                                     //jurnal kerugian 
                                     Sequel.queryu("delete from tampjurnal");
@@ -1676,7 +1676,7 @@ private void MnDetailPiutangActionPerformed(java.awt.event.ActionEvent evt) {//G
 
                                     Sequel.menyimpan("tampjurnal","'"+Piutang_BPJS_RVP+"','PIUTANG BPJS','0','"+(persenbayar *Valid.SetAngka(tabMode.getValueAt(i,8).toString()))+"'","kredit=kredit+'"+(persenbayar *Valid.SetAngka(tabMode.getValueAt(i,8).toString()))+"'","kd_rek='"+Piutang_BPJS_RVP+"'");     
                                     Sequel.menyimpan("tampjurnal","'"+koderekening+"','"+AkunBayar.getSelectedItem()+"','"+tabMode.getValueAt(i,10).toString()+"','0'","debet=debet+'"+tabMode.getValueAt(i,10).toString()+"'","kd_rek='"+koderekening+"'"); 
-                                    sukses=jur.simpanJurnal(tabMode.getValueAt(i,1).toString(),"U","RVP PIUTANG BPJS"+", OLEH "+kdptg.getText()); 
+                                    sukses=jur.simpanJurnal(tabMode.getValueAt(i,1).toString(),"U","K096 RVP PIUTANG BPJS"+", OLEH "+kdptg.getText()); 
                                     
                                     if(sukses==true){
                                         //update RVP Rawat jalan

@@ -809,7 +809,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         Sequel.menyimpan2("tampjurnal","?,?,?,?",4,new String[]{PPN_Masukan,"PPN Masukan IPSRS",""+ppn,"0"});
                     }
                     Sequel.menyimpan("tampjurnal","?,?,?,?",4,new String[]{akunbayar,"KAS KELUAR","0",""+(ttl+ppn+meterai)}); 
-                    sukses=jur.simpanJurnal(NoFaktur.getText(),"U","PEMBELIAN BARANG NON MEDIS DAN PENUNJANG(LAB & RAD) "+", OLEH "+akses.getkode());
+                    sukses=jur.simpanJurnal(NoFaktur.getText(),"U","K046 PEMBELIAN BARANG NON MEDIS DAN PENUNJANG(LAB & RAD) "+", OLEH "+akses.getkode());
                 }
                 if(sukses==true){
                     Sequel.Commit();
