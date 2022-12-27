@@ -510,22 +510,6 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 				<text><![CDATA[WIB]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="237" y="315" width="23" height="11" uuid="29530277-2e92-484e-957d-bdd381d03c82"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="8"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[SMF]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="299" y="319" width="6" height="11" uuid="ec33915a-ce8a-471e-bd9a-36cd942c05a6"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="8"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[:]]></text>
-			</staticText>
-			<staticText>
 				<reportElement x="328" y="171" width="37" height="11" uuid="648e8622-a577-44a7-bb30-54359b5290e7"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8"/>
@@ -802,14 +786,6 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{agama}]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="432" y="300" width="100" height="11" uuid="fd77cafb-19de-4400-9e27-8eca1f231b44"/>
-				<textElement>
-					<font size="8"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{nokartup}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="443" y="552" width="85" height="11" uuid="c6ef50fd-0d53-4e6f-a8df-28df0262d219"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -854,14 +830,6 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 				</textElement>
 				<text><![CDATA[Tidak]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="306" y="320" width="82" height="11" uuid="85fa6542-f6e0-4eaa-bae6-bf4536fe23a2"/>
-				<textElement>
-					<font fontName="Tahoma" size="8"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{dokter}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="417" y="36" width="28" height="11" uuid="e92f2cba-3063-4814-82a9-e6d5627f3ea1"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1510,13 +1478,13 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 				<reportElement x="149" y="739" width="11" height="8" uuid="4b43e9e0-01ae-4cb2-b11b-fa771786fca9"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="231" y="716" width="11" height="8" uuid="d930616d-a768-49a5-be84-a9f520517e41"/>
+				<reportElement x="231" y="698" width="11" height="8" uuid="d930616d-a768-49a5-be84-a9f520517e41"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="231" y="729" width="11" height="8" uuid="67dfd531-f0cd-443f-bad2-0411ac0e1062"/>
+				<reportElement x="231" y="710" width="11" height="8" uuid="67dfd531-f0cd-443f-bad2-0411ac0e1062"/>
 			</rectangle>
 			<rectangle>
-				<reportElement x="231" y="739" width="11" height="8" uuid="012a5e7e-7cdc-45d4-99c7-6351df97b492"/>
+				<reportElement x="231" y="720" width="11" height="8" uuid="012a5e7e-7cdc-45d4-99c7-6351df97b492"/>
 			</rectangle>
 			<staticText>
 				<reportElement x="162" y="737" width="68" height="11" uuid="c602506c-7fa5-44fc-9762-ad4d5530c87f"/>
@@ -1527,7 +1495,7 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 				<text><![CDATA[Terminal state]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="244" y="714" width="68" height="11" uuid="2022568a-603b-4703-95c0-edc3f25a863d"/>
+				<reportElement x="244" y="696" width="68" height="11" uuid="2022568a-603b-4703-95c0-edc3f25a863d"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -1535,7 +1503,7 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 				<text><![CDATA[Progresir penyakit]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="244" y="727" width="68" height="11" uuid="65e26369-d6fa-4b7c-ad57-b903b183df4d"/>
+				<reportElement x="244" y="708" width="68" height="11" uuid="65e26369-d6fa-4b7c-ad57-b903b183df4d"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -1543,7 +1511,7 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 				<text><![CDATA[Penyulit terapi]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="245" y="737" width="68" height="11" uuid="868717d4-fa0e-43ed-b842-bdad2ab42ba4"/>
+				<reportElement x="245" y="718" width="68" height="11" uuid="868717d4-fa0e-43ed-b842-bdad2ab42ba4"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
@@ -1603,7 +1571,7 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[Maninggal < 48 jam]]></text>
+				<text><![CDATA[Meninggal < 48 jam]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="506" y="-13" width="47" height="11" uuid="63f635ea-b1c2-49fc-9cf1-8bd3db6181ea"/>
@@ -1876,32 +1844,10 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[Maninggal > 48 jam]]></text>
+				<text><![CDATA[Meninggal > 48 jam]]></text>
 			</staticText>
 			<rectangle>
 				<reportElement x="414" y="703" width="11" height="8" uuid="5e637ed2-1755-4fbb-aea9-e8654e24bc57"/>
-			</rectangle>
-			<rectangle>
-				<reportElement x="231" y="705" width="11" height="8" uuid="41989bf2-d1dd-4694-bf44-93fcfaf2f678"/>
-			</rectangle>
-			<staticText>
-				<reportElement x="244" y="703" width="68" height="11" uuid="5b65ed6b-8faf-42db-82a7-cf25f86ee193"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="8"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Belum Sembuh]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="246" y="690" width="35" height="11" uuid="4f1dbaa4-dbd8-4d9a-b98a-af50a6a70b91"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="Tahoma" size="8"/>
-					<paragraph lineSpacing="Single"/>
-				</textElement>
-				<text><![CDATA[Sehat]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement x="231" y="692" width="11" height="8" uuid="7c2e644f-aff3-481e-b239-8370e0cc0428"/>
 			</rectangle>
 			<staticText>
 				<reportElement x="0" y="-13" width="124" height="11" uuid="64e4e5db-1718-4cd9-b7b0-c659704b2ce1"/>
@@ -1958,6 +1904,17 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[.......................................................]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="231" y="731" width="11" height="8" uuid="3913c606-a20e-4a66-9887-433375ce8c96"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="245" y="729" width="68" height="11" uuid="d6f408c2-843b-470a-a816-16f54c1c8350"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Sembuh]]></text>
 			</staticText>
 		</band>
 	</title>

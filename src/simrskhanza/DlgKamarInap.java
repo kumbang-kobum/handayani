@@ -11559,7 +11559,7 @@ private void MnRujukMasukActionPerformed(java.awt.event.ActionEvent evt) {//GEN-
                                 param.put("pekerjaan",Sequel.cariIsi("select pasien.pekerjaan from pasien where pasien.no_rkm_medis=?",rs2.getString("no_rkm_medis")));
                                 param.put("status","Single");
                                 param.put("alamat",Sequel.cariIsi("select pasien.alamat from pasien where pasien.no_rkm_medis=?",rs2.getString("no_rkm_medis")));
-                                param.put("nokartup",Sequel.cariIsi("select pasien.peserta from pasien where pasien.no_rkm_medis=?",rs2.getString("no_rkm_medis")));
+                                param.put("nokartup",Sequel.cariIsi("select pasien.no_peserta from pasien where pasien.no_rkm_medis=?",rs2.getString("no_rkm_medis")));
                                 param.put("keluarga",Sequel.cariIsi("select pasien.namakeluarga from pasien where pasien.no_rkm_medis=?",rs2.getString("no_rkm_medis")));
                                 param.put("alamatpj",Sequel.cariIsi("select pasien.alamatpj from pasien where pasien.no_rkm_medis=?",rs2.getString("no_rkm_medis")));
                                 param.put("hubkeluarga",Sequel.cariIsi("select pasien.keluarga from pasien where pasien.no_rkm_medis=?",rs2.getString("no_rkm_medis")));
