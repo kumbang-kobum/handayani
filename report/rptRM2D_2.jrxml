@@ -1740,7 +1740,7 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[Pasien Lama]]></text>
+				<text><![CDATA[Pasien Lama < 30 Hari]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="341" y="256" width="6" height="11" uuid="1b7bb1f1-2c20-4f48-b0ed-9bae71241782"/>
@@ -1891,6 +1891,28 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[Sembuh]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="185" y="314" width="8" height="8" uuid="2bd9e007-9b99-4f57-b784-620ce4274c59"/>
+				<graphicElement>
+					<pen lineWidth="0.75"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="200" y="315" width="84" height="11" uuid="30d6acf1-d37b-4547-8617-2e707a1c505c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Pasien Lama > 30 Hari]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="187" y="309" width="8" height="11" uuid="5fa2afa9-188f-4b42-9182-a7dd7ad5a98d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[/]]></text>
 			</staticText>
 		</band>
 	</title>
