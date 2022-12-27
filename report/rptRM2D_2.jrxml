@@ -711,7 +711,7 @@ and pasien.kd_kec=kecamatan.kd_kec and pasien.kd_kab=kabupaten.kd_kab]]>
 					<font fontName="Tahoma" size="8"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
-				<text><![CDATA[Maninggal]]></text>
+				<text><![CDATA[Meninggal]]></text>
 			</staticText>
 			<line>
 				<reportElement x="556" y="0" width="1" height="754" uuid="632e6047-699a-40a8-a97a-60a0b6d008d2"/>
