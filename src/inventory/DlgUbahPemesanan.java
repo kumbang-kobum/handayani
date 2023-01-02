@@ -804,7 +804,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                                 Sequel.menyimpan("tampjurnal","?,?,?,?","Rekening",4,new String[]{
                                     Sequel.cariIsi("select set_akun.Kontra_Pemesanan_Obat from set_akun"),"HUTANG USAHA",rs.getString("tagihan"),"0"
                                 }); 
-                                sukses=jur.simpanJurnal(rs.getString("no_faktur"),"U","K035 BATAL TRANSAKSI PENERIMAAN BARANG DI "+Sequel.cariIsi("select nm_bangsal from bangsal where kd_bangsal=?",rs.getString("kd_bangsal")).toUpperCase()+", OLEH "+akses.getkode());
+                                sukses=jur.simpanJurnal(rs.getString("no_faktur"),"U","BATAL TRANSAKSI PENERIMAAN BARANG DI "+Sequel.cariIsi("select nm_bangsal from bangsal where kd_bangsal=?",rs.getString("kd_bangsal")).toUpperCase()+", OLEH "+akses.getkode());
                             }
                             
                             if(sukses==true){
@@ -868,7 +868,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                                                 Sequel.menyimpan2("tampjurnal","?,?,?,?",4,new String[]{Sequel.cariIsi("select set_akun.PPN_Masukan from set_akun"),"PPN Masukan Obat",""+ppn,"0"});
                                             }
                                             Sequel.menyimpan2("tampjurnal","?,?,?,?",4,new String[]{Sequel.cariIsi("select set_akun.Kontra_Pemesanan_Obat from set_akun"),"HUTANG USAHA","0",""+(ttl+ppn+meterai)}); 
-                                            sukses=jur.simpanJurnal(NoFaktur.getText(),"U","K036 PENERIMAAN BARANG DI "+nmgudang.getText().toUpperCase()+", OLEH "+akses.getkode());
+                                            sukses=jur.simpanJurnal(NoFaktur.getText(),"U","PENERIMAAN BARANG DI "+nmgudang.getText().toUpperCase()+", OLEH "+akses.getkode());
                                         }
                                     }else{
                                         sukses=false;

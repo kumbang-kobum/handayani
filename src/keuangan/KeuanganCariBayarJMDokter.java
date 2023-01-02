@@ -710,7 +710,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                                     Sequel.menyimpan("tampjurnal","'"+Bayar_JM_Dokter+"','Bayar JM Dokter','0','"+rs.getDouble("besar_bayar")+"'","kredit=kredit+'"+(rs.getDouble("besar_bayar"))+"'","kd_rek='"+Bayar_JM_Dokter+"'");       
                                     Sequel.menyimpan("tampjurnal","'"+koderekening+"','"+rs.getString("nama_bayar")+"','"+rs.getDouble("besar_bayar")+"','0'","debet=debet+'"+(rs.getDouble("besar_bayar"))+"'","kd_rek='"+koderekening+"'");  
                                 }
-                                sukses=jur.simpanJurnal(tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString(),"U","K084 PEMBATALAN PEMBAYARAN JASA MEDIS DOKTER "+tbDokter.getValueAt(tbDokter.getSelectedRow(),3).toString()+" "+tbDokter.getValueAt(tbDokter.getSelectedRow(),4).toString()+", OLEH "+akses.getkode());
+                                sukses=jur.simpanJurnal(tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString(),"U","PEMBATALAN PEMBAYARAN JASA MEDIS DOKTER "+tbDokter.getValueAt(tbDokter.getSelectedRow(),3).toString()+" "+tbDokter.getValueAt(tbDokter.getSelectedRow(),4).toString()+", OLEH "+akses.getkode());
                             }
                             
                             if(sukses==true){

@@ -803,7 +803,7 @@ private void ppHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST
                       Sequel.menyimpan("tampjurnal","?,?,?,?","Rekening",4,new String[]{
                           Kontra_Hibah_Aset,"PENDAPATAN HIBAH",rs.getString("totalhibah"),"0"
                       }); 
-                      sukses=jur.simpanJurnal(rs.getString("no_hibah"),"U","K005 PEMBATALAN HIBAH ASET/INVENTARIS "+", OLEH "+akses.getkode());
+                      sukses=jur.simpanJurnal(rs.getString("no_hibah"),"U","PEMBATALAN HIBAH ASET/INVENTARIS "+", OLEH "+akses.getkode());
                       if(sukses==true){
                           Sequel.queryu2("delete from inventaris_hibah where no_hibah=?",1,new String[]{rs.getString("no_hibah")});
                           Sequel.Commit();

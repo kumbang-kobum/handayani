@@ -2836,7 +2836,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                             Sequel.menyimpan("tampjurnal","'"+HPP_Obat_Operasi_Ranap+"','HPP Persediaan Operasi Rawat Inap','"+ttlbhp+"','0'","debet=debet+'"+(ttlbhp)+"'","kd_rek='"+HPP_Obat_Operasi_Ranap+"'");     
                             Sequel.menyimpan("tampjurnal","'"+Persediaan_Obat_Kamar_Operasi_Ranap+"','Persediaan BHP Operasi Rawat Inap','0','"+ttlbhp+"'","kredit=kredit+'"+(ttlbhp)+"'","kd_rek='"+Persediaan_Obat_Kamar_Operasi_Ranap+"'");                                
                         }
-                        sukses=jur.simpanJurnal(TNoRw.getText(),"U","K134 OPERASI RAWAT INAP PASIEN "+TPasien.getText()+" DIPOSTING OLEH "+akses.getkode());                                              
+                        sukses=jur.simpanJurnal(TNoRw.getText(),"U","OPERASI RAWAT INAP PASIEN "+TPasien.getText()+" DIPOSTING OLEH "+akses.getkode());                                              
                     }else if(status.equals("Ralan")){
                         Sequel.queryu("delete from tampjurnal");    
                         if(ttlpendapatan>0){
@@ -2855,7 +2855,7 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                             Sequel.menyimpan("tampjurnal","'"+HPP_Obat_Operasi_Ralan+"','HPP Persediaan Operasi Rawat Jalan','"+ttlbhp+"','0'","debet=debet+'"+(ttlbhp)+"'","kd_rek='"+HPP_Obat_Operasi_Ralan+"'");     
                             Sequel.menyimpan("tampjurnal","'"+Persediaan_Obat_Kamar_Operasi_Ralan+"','Persediaan BHP Operasi Rawat Jalan','0','"+ttlbhp+"'","kredit=kredit+'"+(ttlbhp)+"'","kd_rek='"+Persediaan_Obat_Kamar_Operasi_Ralan+"'");                                
                         }
-                        sukses=jur.simpanJurnal(TNoRw.getText(),"U","K135 OPERASI RAWAT JALAN PASIEN "+TPasien.getText()+" DIPOSTING OLEH "+akses.getkode());                                              
+                        sukses=jur.simpanJurnal(TNoRw.getText(),"U","OPERASI RAWAT JALAN PASIEN "+TPasien.getText()+" DIPOSTING OLEH "+akses.getkode());                                              
                     }
                 }
                     
@@ -3589,6 +3589,34 @@ private void ChkInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         }
         tampil();
         tampil2();
+    }
+    
+    public void setNoRm(String norm,String nama,String posisi,String KodeOperator,String NamaOperator){
+        TNoRw.setText(norm);
+        TPasien.setText(nama);
+        this.status=posisi;
+        this.kd_pj=Sequel.cariIsi("select kd_pj from reg_periksa where no_rawat=?",norm);        
+        if(status.equals("Ranap")){
+            norawatibu=Sequel.cariIsi("select ranap_gabung.no_rawat from ranap_gabung where ranap_gabung.no_rawat2=?",TNoRw.getText());
+        
+            if(!norawatibu.equals("")){
+                kelas=Sequel.cariIsi(
+                    "select kamar.kelas from kamar inner join kamar_inap "+
+                    "on kamar.kd_kamar=kamar_inap.kd_kamar where no_rawat=? "+
+                    "and stts_pulang='-' order by STR_TO_DATE(concat(kamar_inap.tgl_masuk,' ',jam_masuk),'%Y-%m-%d %H:%i:%s') desc limit 1",norawatibu);
+            }else{
+                kelas=Sequel.cariIsi(
+                    "select kamar.kelas from kamar inner join kamar_inap "+
+                    "on kamar.kd_kamar=kamar_inap.kd_kamar where no_rawat=? "+
+                    "and stts_pulang='-' order by STR_TO_DATE(concat(kamar_inap.tgl_masuk,' ',jam_masuk),'%Y-%m-%d %H:%i:%s') desc limit 1",TNoRw.getText());
+            } 
+        }else if(status.equals("Ralan")){
+            kelas="Rawat Jalan";
+        }
+        tampil();
+        tampil2();
+        kdoperator1.setText(KodeOperator);
+        nmoperator1.setText(NamaOperator);
     }
     
     

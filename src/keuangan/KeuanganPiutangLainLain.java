@@ -809,7 +809,7 @@ public final class KeuanganPiutangLainLain extends javax.swing.JDialog {
                     Sequel.queryu("delete from tampjurnal");                    
                     Sequel.menyimpan("tampjurnal","'"+kontraakun+"','"+namakontraakun+"','"+NominalPinjam.getText()+"','0'","Rekening");    
                     Sequel.menyimpan("tampjurnal","'"+koderekening+"','"+AkunBayar.getSelectedItem()+"','0','"+NominalPinjam.getText()+"'","Rekening"); 
-                    sukses=jur.simpanJurnal(NoNota.getText(),"U","K090 PIUTANG PERUSAHAAN/LAIN-LAIN"+", OLEH "+akses.getkode());                   
+                    sukses=jur.simpanJurnal(NoNota.getText(),"U","PIUTANG PERUSAHAAN/LAIN-LAIN"+", OLEH "+akses.getkode());                   
             }else{
                 sukses=false;
             }  
@@ -867,7 +867,7 @@ public final class KeuanganPiutangLainLain extends javax.swing.JDialog {
                 Sequel.queryu("delete from tampjurnal");                    
                 Sequel.menyimpan("tampjurnal","'"+tbKamar.getValueAt(tbKamar.getSelectedRow(),6).toString()+"','"+tbKamar.getValueAt(tbKamar.getSelectedRow(),7).toString()+"','"+tbKamar.getValueAt(tbKamar.getSelectedRow(),10).toString()+"','0'","Rekening");    
                 Sequel.menyimpan("tampjurnal","'"+kontraakun+"','"+namakontraakun+"','0','"+tbKamar.getValueAt(tbKamar.getSelectedRow(),10).toString()+"'","Rekening"); 
-                sukses=jur.simpanJurnal(NoNota.getText(),"U","K091 PEMBATALAN PIUTANG LAIN-LAIN"+", OLEH "+akses.getkode());     
+                sukses=jur.simpanJurnal(NoNota.getText(),"U","PEMBATALAN PIUTANG LAIN-LAIN"+", OLEH "+akses.getkode());     
             }else{
                 sukses=false;
             }

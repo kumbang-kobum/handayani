@@ -827,7 +827,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         Sequel.menyimpan2("tampjurnal","?,?,?,?",4,new String[]{PPN_Masukan,"PPN Masukan Toko",""+ppn,"0"});
                     }
                     Sequel.menyimpan("tampjurnal","?,?,?,?",4,new String[]{Kontra_Penerimaan_Toko,"HUTANG BARANG TOKO","0",""+(ttl+ppn+meterai)}); 
-                    sukses=jur.simpanJurnal(NoFaktur.getText(),"U","K150 PENERIMAAN BARANG TOKO"+", OLEH "+akses.getkode());
+                    sukses=jur.simpanJurnal(NoFaktur.getText(),"U","PENERIMAAN BARANG TOKO"+", OLEH "+akses.getkode());
                 }
                 
                 if(sukses==true){

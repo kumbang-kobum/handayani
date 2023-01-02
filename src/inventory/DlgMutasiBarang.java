@@ -1178,7 +1178,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                 while(rs.next()){            
                     if(aktifkanbatch.equals("yes")){
                         psstok=koneksi.prepareStatement(
-                                "select ifnull(gudangbarang.stok,'1'),data_batch."+hppfarmasi+" as dasar,gudangbarang.no_batch,gudangbarang.no_faktur "+
+                                "select ifnull(gudangbarang.stok,'0'),data_batch."+hppfarmasi+" as dasar,gudangbarang.no_batch,gudangbarang.no_faktur "+
                                 "from gudangbarang inner join data_batch on gudangbarang.kode_brng=data_batch.kode_brng "+
                                 "where gudangbarang.stok>0 and gudangbarang.kd_bangsal=? and gudangbarang.kode_brng=? and "+
                                 "gudangbarang.no_batch<>'' and gudangbarang.no_faktur<>''"+
