@@ -483,7 +483,8 @@
                                                             )
                                                         );
                                                         http_response_code(201);
-                                                    }else */if(strpos($decode['norm'],"'")||strpos($decode['norm'],"\\")){
+                                                    }else */
+                                                    if(strpos($decode['norm'],"'")||strpos($decode['norm'],"\\")){
                                                         $response = array(
                                                             'metadata' => array(
                                                                 'message' => 'Format No.RM salah',
@@ -537,18 +538,19 @@
                                                                         }
                                                                     }
 
-                                                                    $jeniskunjungan= "1 (Rujukan FKTP)";
-                                                                    if($decode['jeniskunjungan']=="1"){
+                                                                    $jeniskunjungan = "1 (Rujukan FKTP)";
+                                                                    $kunjungan      = validTeks4($decode['jeniskunjungan'],20);
+                                                                    if($kunjungan=="1"){
                                                                         $jeniskunjungan = "1 (Rujukan FKTP)";
-                                                                    }else if($decode['jeniskunjungan']=="2"){
+                                                                    }else if($kunjungan=="2"){
                                                                         $jeniskunjungan = "2 (Rujukan Internal)";
-                                                                    }else if($decode['jeniskunjungan']=="3"){
+                                                                    }else if($kunjungan=="3"){
                                                                         $jeniskunjungan = "3 (Kontrol)";
-                                                                    }else if($decode['jeniskunjungan']=="4"){
+                                                                    }else if($kunjungan=="4"){
                                                                         $jeniskunjungan = "4 (Rujukan Antar RS)";
                                                                     }
 
-                                                                    $querybooking = bukaquery2("insert into referensi_mobilejkn_bpjs values('$nobooking','$no_rawat', '".validTeks4($decode['nomorkartu'],20)."', '".validTeks4($decode['nik'],20)."','".validTeks4($decode['nohp'],20)."','".validTeks4($decode['kodepoli'],20)."','$statusdaftar','$datapeserta[no_rkm_medis]','".validTeks4($decode['tanggalperiksa'],20)."','".validTeks4($decode['kodedokter'],20)."','".validTeks4($decode['jampraktek'],20)."','".validTeks4($jeniskunjungan,20)."','".validTeks4($decode['nomorreferensi'],30)."','".$kdpoli."-".$noReg."','$noReg','".(strtotime($jadwal['jam_mulai'].'+'.$dilayani.' minute')* 1000)."','".($jadwal['kuota']-$sisakuota-1)."','$jadwal[kuota]','".($jadwal['kuota']-$sisakuota-1)."','$jadwal[kuota]','Belum','0000-00-00 00:00:00','Belum')");
+                                                                    $querybooking = bukaquery2("insert into referensi_mobilejkn_bpjs values('$nobooking','$no_rawat', '".validTeks4($decode['nomorkartu'],20)."', '".validTeks4($decode['nik'],20)."','".validTeks4($decode['nohp'],20)."','".validTeks4($decode['kodepoli'],20)."','$statusdaftar','$datapeserta[no_rkm_medis]','".validTeks4($decode['tanggalperiksa'],20)."','".validTeks4($decode['kodedokter'],20)."','".validTeks4($decode['jampraktek'],20)."','".$jeniskunjungan."','".validTeks4($decode['nomorreferensi'],30)."','".$kdpoli."-".$noReg."','$noReg','".(strtotime($jadwal['jam_mulai'].'+'.$dilayani.' minute')* 1000)."','".($jadwal['kuota']-$sisakuota-1)."','$jadwal[kuota]','".($jadwal['kuota']-$sisakuota-1)."','$jadwal[kuota]','Belum','0000-00-00 00:00:00','Belum')");
                                                                     if ($querybooking) {
                                                                         $query = bukaquery2("insert into reg_periksa values('$noReg', '$no_rawat', '".validTeks4($decode['tanggalperiksa'],20)."',current_time(), '$kddokter', '$datapeserta[no_rkm_medis]', '$kdpoli', '$datapeserta[namakeluarga]', '$datapeserta[alamatpj], $datapeserta[kelurahanpj], $datapeserta[kecamatanpj], $datapeserta[kabupatenpj], $datapeserta[propinsipj]', '$datapeserta[keluarga]', '".getOne2("select registrasilama from poliklinik where kd_poli='$kdpoli'")."', 'Belum','".str_replace("0","Lama",str_replace("1","Baru",$statusdaftar))."','Ralan', '".CARABAYAR."', '$umur','$sttsumur','Belum Bayar', '$statuspoli')");
                                                                         if ($query) {
@@ -888,15 +890,7 @@
                                                     )
                                                 );
                                                 http_response_code(201);
-                                            }else if($booking['status']=='Belum'){
-                                                $response = array(
-                                                    'metadata' => array(
-                                                        'message' => 'Anda belum melakukan checkin, Silahkan checkin terlebih dahulu',
-                                                        'code' => 201
-                                                    )
-                                                );
-                                                http_response_code(201);
-                                            }else if($booking['status']=='Checkin'){
+                                            }else {
                                                 /*single poli
                                                 $kodedokter = getOne2("select kd_dokter from maping_dokter_dpjpvclaim where kd_dokter_bpjs='$booking[kodedokter]'");
                                                 $kodepoli   = getOne2("select kd_poli_rs from maping_poli_bpjs where kd_poli_bpjs='$booking[kodepoli]'");
@@ -950,14 +944,6 @@
                                                     );
                                                     http_response_code(201);
                                                 } 
-                                            }else{
-                                                $response = array(
-                                                    'metadata' => array(
-                                                        'message' => 'Antrean Tidak Ditemukan !',
-                                                        'code' => 201
-                                                    )
-                                                );
-                                                http_response_code(201);
                                             }
                                         }
                                     }
@@ -1646,7 +1632,7 @@
         echo "\n\n";
         echo "Cara Menggunakan Web Service Antrean BPJS Mobile JKN FKTL : \n";
         echo "1. Mengambil Token, methode GET \n";
-        echo "   gunakan URL http://ipserverws:port/webapps/api-bpjsfktl/auth \n";
+        echo "   gunakan URL http://ipserverws:port/api-bpjsfktl/auth \n";
         echo "   Header gunakan x-username:user yang diberikan RS, x-password:pass yang diberikan RS\n";
         echo "   Hasilnya : \n";
         echo '   {'."\n";
@@ -1659,7 +1645,7 @@
         echo '      }'."\n";
         echo '   }'."\n\n";
         echo "2. Menampilkan status atrean poli, methode POST\n";
-        echo "   gunakan URL http://ipserverws:port/webapps/api-bpjsfktl/statusantrean \n";
+        echo "   gunakan URL http://ipserverws:port/api-bpjsfktl/statusantrean \n";
         echo "   Header gunakan x-token:token yang diambil sebelumnya, x-username:user yang diberikan RS";
         echo "   Body berisi : \n";
         echo '   {'."\n";
@@ -1688,7 +1674,7 @@
         echo '      }'."\n";
         echo '   }'."\n\n";
         echo "3. Mengambil atrean poli, methode POST\n";
-        echo "   gunakan URL http://ipserverws:port/webapps/api-bpjsfktl/ambilantrean \n";
+        echo "   gunakan URL http://ipserverws:port/api-bpjsfktl/ambilantrean \n";
         echo "   Header gunakan x-token:token yang diambil sebelumnya, x-username:user yang diberikan RS";
         echo "   Body berisi : \n";
         echo '   {'."\n";
@@ -1726,7 +1712,7 @@
         echo '      }'."\n";
         echo '   }'."\n\n";
         echo "4. Melakukan checkin poli, methode POST\n";
-        echo "   gunakan URL http://ipserverws:port/webapps/api-bpjsfktl/checkinantrean \n";
+        echo "   gunakan URL http://ipserverws:port/api-bpjsfktl/checkinantrean \n";
         echo "   Header gunakan x-token:token yang diambil sebelumnya, x-username:user yang diberikan RS";
         echo "   Body berisi : \n";
         echo '   {'."\n";
@@ -1741,7 +1727,7 @@
         echo '      }'."\n";
         echo '   }'."\n\n";
         echo "5. Membatalkan antrean poli dan hanya bisa dilakukan sebelum pasien checkin, methode POST\n";
-        echo "   gunakan URL http://ipserverws:port/webapps/api-bpjsfktl/batalantrean \n";
+        echo "   gunakan URL http://ipserverws:port/api-bpjsfktl/batalantrean \n";
         echo "   Header gunakan x-token:token yang diambil sebelumnya, x-username:user yang diberikan RS";
         echo "   Body berisi : \n";
         echo '   {'."\n";
@@ -1756,7 +1742,7 @@
         echo '      }'."\n";
         echo '   }'."\n\n";
         echo "6. Melihat sisa antrean poli dan hanya bisa dilakukan setelah pasien checkin, methode POST\n";
-        echo "   gunakan URL http://ipserverws:port/webapps/api-bpjsfktl/sisaantrean \n";
+        echo "   gunakan URL http://ipserverws:port/api-bpjsfktl/sisaantrean \n";
         echo "   Header gunakan x-token:token yang diambil sebelumnya, x-username:user yang diberikan RS";
         echo "   Body berisi : \n";
         echo '   {'."\n";
@@ -1779,7 +1765,7 @@
         echo '      }'."\n";
         echo '   }'."\n\n";
         echo "7. Melihat Jadwal Operasi RS, methode POST\n";
-        echo "   gunakan URL http://ipserverws:port/webapps/api-bpjsfktl/jadwaloperasirs \n";
+        echo "   gunakan URL http://ipserverws:port/api-bpjsfktl/jadwaloperasirs \n";
         echo "   Header gunakan x-token:token yang diambil sebelumnya, x-username:user yang diberikan RS";
         echo "   Body berisi : \n";
         echo '   {'."\n";
@@ -1808,7 +1794,7 @@
         echo '      }'."\n";
         echo '   }'."\n\n";
         echo "8. Melihat Jadwal Operasi Pasien, methode POST\n";
-        echo "   gunakan URL http://ipserverws:port/webapps/api-bpjsfktl/jadwaloperasipasien \n";
+        echo "   gunakan URL http://ipserverws:port/api-bpjsfktl/jadwaloperasipasien \n";
         echo "   Header gunakan x-token:token yang diambil sebelumnya, x-username:user yang diberikan RS";
         echo "   Body berisi : \n";
         echo '   {'."\n";
@@ -1834,7 +1820,7 @@
         echo '      }'."\n";
         echo '   }'."\n\n";
         echo "9. Pasien Baru, methode POST\n";
-        echo "   gunakan URL http://ipserverws:port/webapps/api-bpjsfktl/pasienbaru \n";
+        echo "   gunakan URL http://ipserverws:port/api-bpjsfktl/pasienbaru \n";
         echo "   Header gunakan x-token:token yang diambil sebelumnya, x-username:user yang diberikan RS";
         echo "   Body berisi : \n";
         echo '   {'."\n";

@@ -223,13 +223,6 @@
                 Melalui penyataan ini segala resiko dan yang kemungkinan terjadi sebagai akibat dari pengambilan keputusan ini menjadi tanggung jawab saya pribadi dan keluarga
             </h7>
             <br/><br/>
-            <h7 class="text-dark">
-                Dengan ini menyatakan bahwa:<!-- comment -->
-                <ol>
-                    <li> Saya adalah benar peserta JKN-KIS yang datanya tertera diatas dan menyatakan keaslian identitas tersebut.
-                    <li> Saya bersedia dilakukan pengambilan foto wajah (full face) saat dilakukan pelayanan kesehatan guna otentifikasi biometrik yang diperlukan dalam Sistem Jaminan Kesehatan Nasional (JKN)
-                    <li> Apabila dikemudian hari identitas tersebut tidak sesuai, maka sy bersedia menerima sangsi pidana hukum dan membayar ganti rugi yang timbul sesuai dengan peraturan per udang-undangan yang berlaku.    
-            </h7>
             <h7 class="text-dark"><center>Yang Membuat Pernyataan</center></h7>
             <div class="row">
                 <div class="col-md-6">
