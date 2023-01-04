@@ -214,8 +214,6 @@ public final class RMDataCatatanKeperawatanRanap extends javax.swing.JDialog {
         jLabel12 = new widget.Label();
         scrollPane2 = new widget.ScrollPane();
         Uraian = new widget.TextArea();
-        jLabel31 = new widget.Label();
-        Keterangan = new widget.TextBox();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -404,7 +402,7 @@ public final class RMDataCatatanKeperawatanRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-08-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-01-2023" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -418,7 +416,7 @@ public final class RMDataCatatanKeperawatanRanap extends javax.swing.JDialog {
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-08-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-01-2023" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -514,7 +512,7 @@ public final class RMDataCatatanKeperawatanRanap extends javax.swing.JDialog {
         TPasien.setBounds(326, 10, 295, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "27-08-2022" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "04-01-2023" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -651,21 +649,6 @@ public final class RMDataCatatanKeperawatanRanap extends javax.swing.JDialog {
 
         FormInput.add(scrollPane2);
         scrollPane2.setBounds(74, 70, 715, 53);
-
-        jLabel31.setText("Keterangan :");
-        jLabel31.setName("jLabel31"); // NOI18N
-        FormInput.add(jLabel31);
-        jLabel31.setBounds(800, 80, 80, 23);
-
-        Keterangan.setFocusTraversalPolicyProvider(true);
-        Keterangan.setName("Keterangan"); // NOI18N
-        Keterangan.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                KeteranganKeyPressed(evt);
-            }
-        });
-        FormInput.add(Keterangan);
-        Keterangan.setBounds(880, 80, 150, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -993,10 +976,6 @@ public final class RMDataCatatanKeperawatanRanap extends javax.swing.JDialog {
         Valid.pindah2(evt,NIP,BtnSimpan);
     }//GEN-LAST:event_UraianKeyPressed
 
-    private void KeteranganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganKeyPressed
-        Valid.pindah(evt,Perdarahan,BtnSimpan);
-    }//GEN-LAST:event_KeteranganKeyPressed
-
     /**
     * @param args the command line arguments
     */
@@ -1029,7 +1008,6 @@ public final class RMDataCatatanKeperawatanRanap extends javax.swing.JDialog {
     private widget.ComboBox Detik;
     private widget.PanelBiasa FormInput;
     private widget.ComboBox Jam;
-    private widget.TextBox Keterangan;
     private widget.Label LCount;
     private widget.ComboBox Menit;
     private javax.swing.JMenuItem MnCatatanKeperawatanRawatInap;
@@ -1051,7 +1029,6 @@ public final class RMDataCatatanKeperawatanRanap extends javax.swing.JDialog {
     private widget.Label jLabel18;
     private widget.Label jLabel19;
     private widget.Label jLabel21;
-    private widget.Label jLabel31;
     private widget.Label jLabel4;
     private widget.Label jLabel6;
     private widget.Label jLabel7;

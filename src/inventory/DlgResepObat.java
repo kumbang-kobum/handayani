@@ -1332,7 +1332,8 @@ public final class DlgResepObat extends javax.swing.JDialog {
                 param.put("propinsirs",akses.getpropinsirs());
                 param.put("kontakrs",akses.getkontakrs());
                 param.put("emailrs",akses.getemailrs());   
-                param.put("logo",Sequel.cariGambar("select setting.logo from setting")); 
+                param.put("logo",Sequel.cariGambar("select setting.logo from setting"));
+                param.put("tgl_lahir",Sequel.cariIsi("select tgl_lahir from pasien where no_rkm_medis=?",Sequel.cariIsi("select no_rkm_medis from reg_periksa where no_rawat=?",TNoRw.getText())));
             Valid.MyReportqry("rptResep.jasper","report","::[ Daftar Pemberian Obat Resep ]::","select * from temporary_resep where temporary_resep.temp37='"+akses.getalamatip()+"' order by temporary_resep.no",param);
             this.setCursor(Cursor.getDefaultCursor());
         }        

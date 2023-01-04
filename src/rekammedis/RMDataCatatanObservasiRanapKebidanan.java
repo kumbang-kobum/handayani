@@ -1235,7 +1235,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
     }//GEN-LAST:event_VTKeyPressed
 
     private void KeteranganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganKeyPressed
-        Valid.pindah(evt,Perdarahan,BtnSimpan);
+        Valid.pindah(evt,PPV,BtnSimpan);
     }//GEN-LAST:event_KeteranganKeyPressed
 
     /**
