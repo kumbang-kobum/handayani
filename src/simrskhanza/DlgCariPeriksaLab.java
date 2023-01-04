@@ -1632,7 +1632,7 @@ private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                                     Sequel.menyimpan("tampjurnal","'"+Beban_Jasa_Menejemen_Laborat_Ranap+"','Beban Jasa Menejemen Laborat Ranap','0','"+ttlmenejemen+"'","kredit=kredit+'"+(ttlmenejemen)+"'","kd_rek='"+Beban_Jasa_Menejemen_Laborat_Ranap+"'");     
                                     Sequel.menyimpan("tampjurnal","'"+Utang_Jasa_Menejemen_Laborat_Ranap+"','Utang Jasa Menejemen Laborat Ranap','"+ttlmenejemen+"','0'","debet=debet+'"+(ttlmenejemen)+"'","kd_rek='"+Utang_Jasa_Menejemen_Laborat_Ranap+"'");                               
                                 }
-                                sukses=jur.simpanJurnal(tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString(),"U","PEMBATALAN PEMERIKSAAN LABORAT RAWAT INAP PASIEN "+tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()+" OLEH "+akses.getkode());  
+                                sukses=jur.simpanJurnal(tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString(),"U","K097 PEMBATALAN PEMERIKSAAN LABORAT RAWAT INAP PASIEN "+tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()+" OLEH "+akses.getkode());  
                             }else if(status.equals("Ralan")){
                                 Sequel.queryu("delete from tampjurnal");    
                                 if(ttlpendapatan>0){
@@ -1667,7 +1667,7 @@ private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
                                     Sequel.menyimpan("tampjurnal","'"+Beban_Jasa_Menejemen_Laborat_Ralan+"','Beban Jasa Menejemen Laborat Ralan','0','"+ttlmenejemen+"'","kredit=kredit+'"+(ttlmenejemen)+"'","kd_rek='"+Beban_Jasa_Menejemen_Laborat_Ralan+"'");     
                                     Sequel.menyimpan("tampjurnal","'"+Utang_Jasa_Menejemen_Laborat_Ralan+"','Utang Jasa Menejemen Laborat Ralan','"+ttlmenejemen+"','0'","debet=debet+'"+(ttlmenejemen)+"'","kd_rek='"+Utang_Jasa_Menejemen_Laborat_Ralan+"'");                               
                                 }
-                                sukses=jur.simpanJurnal(tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString(),"U","PEMBATALAN PEMERIKSAAN LABORAT RAWAT JALAN PASIEN "+tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()+" OLEH "+akses.getkode());  
+                                sukses=jur.simpanJurnal(tbDokter.getValueAt(tbDokter.getSelectedRow(),0).toString(),"U","K098 PEMBATALAN PEMERIKSAAN LABORAT RAWAT JALAN PASIEN "+tbDokter.getValueAt(tbDokter.getSelectedRow(),1).toString()+" OLEH "+akses.getkode());  
                             }
                         }
 
@@ -1759,6 +1759,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -2038,6 +2039,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -2190,6 +2192,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -3120,6 +3123,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -3297,6 +3301,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -3475,6 +3480,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -3751,6 +3757,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -3905,6 +3912,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -4060,6 +4068,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -4836,6 +4845,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pekerjaan",Sequel.cariIsi("select pasien.pekerjaan from pasien where pasien.no_rkm_medis=?",rs.getString("no_rkm_medis")));
                         param.put("noktp",Sequel.cariIsi("select pasien.no_ktp from pasien where pasien.no_rkm_medis=?",rs.getString("no_rkm_medis")));
                         param.put("lahir",rs.getString("lahir"));
@@ -4994,6 +5004,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -5172,6 +5183,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));
@@ -5351,6 +5363,7 @@ private void tbDokterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
                         param.put("namapasien",rs.getString("nm_pasien"));
                         param.put("jkel",rs.getString("jk"));
                         param.put("umur",rs.getString("umur"));
+                        param.put("lahir",rs.getString("lahir"));
                         param.put("pengirim",Sequel.cariIsi("select dokter.nm_dokter from dokter where dokter.kd_dokter=?",rs.getString("dokter_perujuk")));
                         param.put("tanggal",rs.getString("tgl_periksa"));
                         param.put("penjab",rs.getString("nm_dokter"));

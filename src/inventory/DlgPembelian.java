@@ -1004,7 +1004,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                                 Sequel.menyimpan2("tampjurnal","?,?,?,?",4,new String[]{PPN_Masukan,"PPN Masukan Obat",""+ppn,"0"});
                             }
                             Sequel.menyimpan2("tampjurnal","?,?,?,?",4,new String[]{kode_akun_bayar,AkunBayar.getSelectedItem().toString(),"0",""+(ttl+ppn)}); 
-                            sukses=jur.simpanJurnal(NoFaktur.getText(),"U","PEMBELIAN DI "+nmgudang.getText().toUpperCase()+", OLEH "+akses.getkode());  
+                            sukses=jur.simpanJurnal(NoFaktur.getText(),"U","K024 PEMBELIAN DI "+nmgudang.getText().toUpperCase()+", OLEH "+akses.getkode()+"#"+nmsup.getText());  
                         }
                     }else{
                         sukses=false;

@@ -817,7 +817,7 @@ private void KdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TKdKey
                         Sequel.menyimpan2("tampjurnal","?,?,?,?",4,new String[]{PPN_Masukan,"PPN Masukan Inventaris",""+ppn,"0"});
                     }
                     Sequel.menyimpan("tampjurnal","?,?,?,?",4,new String[]{akunbayar,"KAS KELUAR","0",""+(ttl+ppn+meterai)}); 
-                    sukses=jur.simpanJurnal(NoFaktur.getText(),"U","PEMBELIAN ASET/INVETARIS "+", OLEH "+akses.getkode());
+                    sukses=jur.simpanJurnal(NoFaktur.getText(),"U","K009 PEMBELIAN ASET/INVETARIS "+", OLEH "+akses.getkode()+"#"+nmsup.getText());
                 }
                 if(sukses==true){
                     Sequel.Commit();

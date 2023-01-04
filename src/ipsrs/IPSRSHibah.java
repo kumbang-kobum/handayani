@@ -723,7 +723,7 @@ private void ppBersihkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-F
                     Sequel.queryu("delete from tampjurnal");
                     Sequel.menyimpan2("tampjurnal","?,?,?,?",4,new String[]{Sequel.cariIsi("select Hibah_Non_Medis from set_akun"),"PERSEDIAAN BARANG NON MEDIS",""+(sbttl),"0"});
                     Sequel.menyimpan2("tampjurnal","?,?,?,?",4,new String[]{Sequel.cariIsi("select Kontra_Hibah_Non_Medis from set_akun"),"PENDAPATAN HIBAH","0",""+(sbttl)}); 
-                    sukses=jur.simpanJurnal(NoFaktur.getText(),"U","HIBAH BARANG NON MEDIS, OLEH "+akses.getkode());  
+                    sukses=jur.simpanJurnal(NoFaktur.getText(),"U","K045 HIBAH BARANG NON MEDIS, OLEH "+akses.getkode());  
                 }
                 
                 if(sukses==true){

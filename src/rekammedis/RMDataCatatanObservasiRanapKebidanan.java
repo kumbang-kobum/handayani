@@ -258,6 +258,8 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         jLabel30 = new widget.Label();
         jLabel31 = new widget.Label();
         VT = new widget.TextBox();
+        jLabel32 = new widget.Label();
+        Keterangan = new widget.TextBox();
         ChkInput = new widget.CekBox();
 
         jPopupMenu1.setName("jPopupMenu1"); // NOI18N
@@ -446,7 +448,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         panelGlass9.add(jLabel19);
 
         DTPCari1.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-05-2022" }));
+        DTPCari1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
         DTPCari1.setDisplayFormat("dd-MM-yyyy");
         DTPCari1.setName("DTPCari1"); // NOI18N
         DTPCari1.setOpaque(false);
@@ -460,7 +462,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         panelGlass9.add(jLabel21);
 
         DTPCari2.setForeground(new java.awt.Color(50, 70, 50));
-        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-05-2022" }));
+        DTPCari2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
         DTPCari2.setDisplayFormat("dd-MM-yyyy");
         DTPCari2.setName("DTPCari2"); // NOI18N
         DTPCari2.setOpaque(false);
@@ -556,7 +558,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         TPasien.setBounds(336, 10, 285, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "26-05-2022" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "31-10-2022" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -851,6 +853,21 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         });
         FormInput.add(VT);
         VT.setBounds(580, 100, 209, 23);
+
+        jLabel32.setText("Keterangan :");
+        jLabel32.setName("jLabel32"); // NOI18N
+        FormInput.add(jLabel32);
+        jLabel32.setBounds(790, 100, 80, 23);
+
+        Keterangan.setFocusTraversalPolicyProvider(true);
+        Keterangan.setName("Keterangan"); // NOI18N
+        Keterangan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                KeteranganKeyPressed(evt);
+            }
+        });
+        FormInput.add(Keterangan);
+        Keterangan.setBounds(880, 100, 150, 23);
 
         PanelInput.add(FormInput, java.awt.BorderLayout.CENTER);
 
@@ -1217,6 +1234,10 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
         Valid.pindah(evt,PPV,BtnSimpan);
     }//GEN-LAST:event_VTKeyPressed
 
+    private void KeteranganKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_KeteranganKeyPressed
+        Valid.pindah(evt,Perdarahan,BtnSimpan);
+    }//GEN-LAST:event_KeteranganKeyPressed
+
     /**
     * @param args the command line arguments
     */
@@ -1252,6 +1273,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
     private widget.TextBox GCS;
     private widget.TextBox HR;
     private widget.ComboBox Jam;
+    private widget.TextBox Keterangan;
     private widget.TextBox Kontraksi;
     private widget.Label LCount;
     private widget.ComboBox Menit;
@@ -1292,6 +1314,7 @@ public final class RMDataCatatanObservasiRanapKebidanan extends javax.swing.JDia
     private widget.Label jLabel29;
     private widget.Label jLabel30;
     private widget.Label jLabel31;
+    private widget.Label jLabel32;
     private widget.Label jLabel35;
     private widget.Label jLabel4;
     private widget.Label jLabel6;
