@@ -2232,7 +2232,7 @@ public final class DlgIGD extends javax.swing.JDialog {
         MnPernyataanPasienUmum.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         MnPernyataanPasienUmum.setForeground(new java.awt.Color(50, 50, 50));
         MnPernyataanPasienUmum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/picture/category.png"))); // NOI18N
-        MnPernyataanPasienUmum.setText("Persetujuan Umum");
+        MnPernyataanPasienUmum.setText("Persetujuan Pasien Umum");
         MnPernyataanPasienUmum.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         MnPernyataanPasienUmum.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         MnPernyataanPasienUmum.setName("MnPernyataanPasienUmum"); // NOI18N
